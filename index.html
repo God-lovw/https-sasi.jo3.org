@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="Explore the ŚA'SI Royalty Goods Love world map. Search places, switch map layers, and save locations.">
+  <title>ŚA'SI | Royalty World Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brand-mark">Ś</span><span><strong>ŚA'SI</strong><small>ROYALTY GOODS LOVE</small></span></a>
+    <div class="top-label">WORLD MAP</div>
+  </header>
+  <main class="workspace">
+    <aside class="sidebar">
+      <div class="intro"><p class="eyebrow">EXPLORE • DISCOVER • BUILD</p><h1>Your world, connected.</h1><p class="muted">Search places, explore the globe, and save locations for your ŚA'SI projects.</p></div>
+      <form id="search-form" class="search-form">
+        <label for="place-search">Find a place</label>
+        <div class="search-row"><input id="place-search" type="search" placeholder="City, address, landmark…" autocomplete="off"><button type="submit" aria-label="Search">⌕</button></div>
+        <p id="search-status" class="status" role="status">Try a city, ZIP code, or landmark.</p>
+      </form>
+      <div class="actions"><button id="locate-btn" class="secondary" type="button">◎ Use my location</button><button id="world-btn" class="secondary" type="button">◉ View whole world</button></div>
+      <section class="panel"><div class="panel-heading"><h2>Map layers</h2><span class="tag">LIVE MAP</span></div>
+        <label class="layer-option"><span><i class="dot street"></i>Street map</span><input type="radio" name="basemap" value="street" checked></label>
+        <label class="layer-option"><span><i class="dot satellite"></i>Satellite imagery</span><input type="radio" name="basemap" value="satellite"></label>
+        <p class="hint">Switch between a street map and satellite imagery. Property, business, and job listings can be added when a verified data source is connected.</p>
+      </section>
+      <section class="panel saved-panel"><div class="panel-heading"><h2>Saved places</h2><span id="saved-count" class="count">0</span></div><div id="saved-list" class="saved-list"><p class="empty">Tap the map to drop a pin, then save it here.</p></div></section>
+      <section class="selection panel"><div class="panel-heading"><h2>Selected location</h2></div><p id="selection-name" class="selection-name">No location selected</p><p id="selection-coords" class="coords">Tap anywhere on the map to select a point.</p><button id="save-btn" class="primary" type="button" disabled>＋ Save this place</button></section>
+      <footer>Map data © OpenStreetMap contributors · Satellite imagery © Esri</footer>
+    </aside>
+    <section class="map-area" aria-label="Interactive world map"><div id="map"></div><div class="map-note">Tap anywhere to place a pin</div></section>
+  </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>
